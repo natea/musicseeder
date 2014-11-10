@@ -1,0 +1,17 @@
+<ion-view title="Events">
+  <ion-content>
+    <ion-list class="list">
+
+    	<ion-list ng-repeat="(key, value) in events | groupBy: 'venue'" type="item-text-wrap">
+  			<div class="item item-divider">
+		    	{{ key }}
+			</div> 
+  			<ion-item ng-repeat="event in value" type="item-text-wrap" href="#/tab/event/{{event.id}}">
+		  		<h2>{{event.name}}</h2>
+			    <span>{{event.date}}</span>
+			    <span class="float-right">{{event.time}}</span>
+  			</ion-item>
+  		</ion-list>
+	</ion-list>
+  </ion-content>
+</ion-view>
